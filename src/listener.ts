@@ -39,7 +39,7 @@ export abstract class Listener {
   parseMessage(msg: Message) {
     const data = msg.getData();
     // Data can be a string or a Buffer, add logic to massage Buffer into string if needed
-    return typeof data === 'string' ? JSON.parse(data) : JSON.parse(data.toString('utf8'));
+    return JSON.parse(typeof data === 'string' ? data : data.toString('utf8'));
   }
 }
 
