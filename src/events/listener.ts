@@ -42,13 +42,3 @@ export abstract class Listener {
     return JSON.parse(typeof data === 'string' ? data : data.toString('utf8'));
   }
 }
-
-export class TicketCreatedListener extends Listener {
-  subject = 'ticket:created';
-  queueGroupName = 'payments-service';
-  onMessage(data: any, msg: Message) {
-    console.log('Event data!', data);
-
-    msg.ack();
-  }
-}
