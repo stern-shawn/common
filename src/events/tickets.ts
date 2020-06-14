@@ -3,7 +3,7 @@ import { Subjects } from './subjects';
 interface TicketData {
   id: string;
   title: string;
-  price: string;
+  price: number;
   userId: string;
 }
 
